@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Horváth Tamás – Webfejlesztő</title>
+  <meta name="description" content="Profi webfejlesztés: portfólió, webshop, AI, Laravel. Gyors, biztonságos, üzletre szabott.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top">HT<span>.</span></a>
+      <nav>
+        <a href="#rolam">Rólam</a>
+        <a href="#szolgaltatasok">Szolgáltatások</a>
+        <a href="#kapcsolat">Kapcsolat</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero container">
+      <div class="hero-text">
+        <h1>Horváth <span>Tamás</span></h1>
+        <p class="lead">Webfejlesztő. Letisztult design, gyors felület, üzletre szabott megoldások.</p>
+        <div class="hero-actions">
+          <a href="#kapcsolat" class="btn">Kapcsolatfelvétel</a>
+          <a href="#szolgaltatasok" class="btn ghost">Szolgáltatások</a>
+        </div>
+        <div id="greeting" class="greeting"></div>
+      </div>
+      <div class="hero-image-wrap">
+        <!-- A portréd neve: assets/img/tamas.png -->
+        <img src="assets/img/tamas.png" alt="Horváth Tamás portré" class="hero-image">
+      </div>
+    </section>
+
+    <section id="rolam" class="container section">
+      <h2>Rólam</h2>
+      <p class="muted">Rövid bemutatkozó szöveg helye. Ezt később kitöltjük és finomítjuk.</p>
+    </section>
+
+    <section id="szolgaltatasok" class="container section">
+      <h2>Szolgáltatások</h2>
+      <div class="grid cards">
+        <article class="card"><h3>Portfólió oldal</h3><p>Gyors, mobilbarát, SEO-barát.</p></article>
+        <article class="card"><h3>Webshop</h3><p>Egyszerű rendelési folyamat, fizetés integráció.</p></article>
+        <article class="card"><h3>AI chat</h3><p>24/7 válasz, konverzió növelés.</p></article>
+      </div>
+    </section>
+
+    <section id="kapcsolat" class="container section">
+      <h2>Kapcsolat</h2>
+      <form name="kapcsolat" method="POST" data-netlify="true" class="contact-form">
+        <input type="hidden" name="form-name" value="kapcsolat">
+        <div class="grid two">
+          <div>
+            <label>Név</label>
+            <input type="text" name="name" required placeholder="Teljes név">
+          </div>
+          <div>
+            <label>E-mail</label>
+            <input type="email" name="email" required placeholder="email@cim.hu">
+          </div>
+        </div>
+        <label>Üzenet</label>
+        <textarea name="message" rows="5" required placeholder="Írd le röviden, miben segíthetek"></textarea>
+        <button class="btn" type="submit">Küldés</button>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer">
+      <p>© <span id="year"></span> Horváth Tamás. Minden jog fenntartva.</p>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
