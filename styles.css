@@ -1,96 +1,84 @@
-/* Alapok */
 :root{
-  --bg:#f6f7fb;
-  --ink:#1e1e1e;
-  --muted:#5a6270;
-  --brand:#0d74ff;
-  --brand2:#00c2ff;
-  --side:#102341; /* sötétebb kék a sávhoz */
-  --border:rgba(0,0,0,.08);
+  --bg:#f6f7fb; --ink:#1f242d; --muted:#5a6270; --brand:#0d74ff; --brand2:#00c2ff;
+  --side:#102341; --border:rgba(0,0,0,.08); --bubble:#ffffff;
 }
 *{box-sizing:border-box}
-html, body{height:100%}
-body{
-  margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif;
-  color:var(--ink); background:var(--bg);
-}
+html,body{height:100%}
+body{margin:0; font-family:Inter,system-ui,Segoe UI,Roboto,Arial,sans-serif; color:var(--ink); background:var(--bg)}
 
-/* 3D canvas */
-#bg{
-  position:fixed; inset:0; z-index:0; display:block; width:100%; height:100%;
+/* 3D canvas + fallback */
+#bg{position:fixed; inset:0; z-index:0; width:100%; height:100%; display:block}
+#bg-fallback{
+  position:fixed; inset:0; z-index:0;
+  background:
+    radial-gradient(800px 400px at 85% 10%, rgba(0,194,255,.18), transparent 60%),
+    radial-gradient(700px 420px at 10% 80%, rgba(13,116,255,.14), transparent 60%),
+    linear-gradient(#f6f7fb, #f6f7fb);
+  animation: floaty 18s ease-in-out infinite alternate;
 }
+@keyframes floaty{0%{transform:translateY(0)}100%{transform:translateY(-14px)}}
 
-/* Jobb oldali sáv */
+/* Oldalsó sáv */
 .sidebar{
   position:fixed; right:12px; top:10px; bottom:10px; width:60px;
-  background:var(--side); border-radius:16px;
-  display:flex; flex-direction:column; align-items:center; justify-content:flex-start;
-  gap:14px; padding:12px 10px; z-index:3;
-  box-shadow:0 10px 30px rgba(0,0,0,.18);
+  background:var(--side); border-radius:16px; display:flex; flex-direction:column;
+  align-items:center; gap:14px; padding:12px 10px; z-index:3; box-shadow:0 10px 30px rgba(0,0,0,.18)
 }
-.hamburger{
-  width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,.25);
-  background:transparent; cursor:pointer; display:grid; place-items:center; color:#fff;
-}
+.hamburger{width:40px; height:40px; border-radius:50%; border:1px solid rgba(255,255,255,.25); background:transparent; cursor:pointer; display:grid; place-items:center; color:#fff}
 .hamburger span{display:block; width:18px; height:2px; background:#fff; margin:3px 0; border-radius:2px}
-.side-icons{display:flex; flex-direction:column; gap:10px; margin-top:4px}
-.ico{
-  width:40px; height:40px; display:grid; place-items:center; color:#fff;
-  background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18);
-  border-radius:50%; transition:transform .15s ease, background .15s;
-}
+.side-icons{display:flex; flex-direction:column; gap:10px}
+.ico{width:40px; height:40px; display:grid; place-items:center; color:#fff; background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.18); border-radius:50%; transition:transform .15s ease, background .15s}
 .ico:hover{transform:translateY(-2px); background:rgba(255,255,255,.16)}
 .langs{margin-top:auto; display:flex; flex-direction:column; gap:8px}
-.flag{
-  width:40px; height:28px; border-radius:8px; border:1px solid rgba(255,255,255,.25);
-  background:#e6eefc; color:#0b2656; font-weight:800; cursor:pointer;
+.flag{width:40px; height:28px; border-radius:8px; border:1px solid rgba(255,255,255,.25); color:#0b2656; font-weight:800; cursor:pointer}
+.flag.hu{background:linear-gradient(#d32f2f 0 33%, #fff 33% 66%, #2e7d32 66%)}
+.flag.en{
+  background:
+    linear-gradient(transparent 0 45%, #fff 45% 55%, transparent 55%),
+    linear-gradient(90deg, transparent 0 45%, #fff 45% 55%, transparent 55%),
+    linear-gradient(#0b3d91, #0b3d91);
 }
 .flag.active{outline:2px solid #79c4ff}
 
-/* Kihúzható menü */
-.drawer{
-  position:fixed; right:-280px; top:0; height:100%; width:260px; z-index:4;
-  background:#ffffff; border-left:1px solid var(--border); box-shadow:-10px 0 30px rgba(0,0,0,.08);
-  transition:right .28s ease;
-  padding:16px;
-}
+/* Drawer */
+.drawer{position:fixed; right:-280px; top:0; height:100%; width:260px; z-index:4; background:#fff; border-left:1px solid var(--border); box-shadow:-10px 0 30px rgba(0,0,0,.08); transition:right .28s ease; padding:16px}
 .drawer.open{right:0}
-.drawer-close{
-  font-size:28px; line-height:1; background:transparent; border:0; cursor:pointer; float:right;
-}
+.drawer-close{font-size:28px; background:transparent; border:0; cursor:pointer; float:right}
 .drawer-nav{margin-top:40px; display:flex; flex-direction:column; gap:12px}
-.drawer-nav a{
-  padding:10px 12px; border-radius:10px; border:1px solid var(--border); color:var(--ink); text-decoration:none;
-}
+.drawer-nav a{padding:10px 12px; border-radius:10px; border:1px solid var(--border); color:var(--ink); text-decoration:none}
 .drawer-nav a:hover{background:#f3f6ff}
 
-/* Hero */
-.hero{
-  position:relative; z-index:1; min-height:100vh; display:flex; align-items:center; justify-content:center;
-  padding:0 10%;
-}
-.hero-content{
-  display:flex; align-items:center; gap:56px; max-width:1200px;
+/* Hero – BALRA igazítva */
+.hero{position:relative; z-index:1; min-height:100vh; display:flex; align-items:center; justify-content:flex-start; padding:0 6%}
+.hero-content.left{
+  display:flex; align-items:flex-start; gap:36px; max-width:1200px;
   background:rgba(255,255,255,.55); backdrop-filter:blur(6px);
-  border:1px solid var(--border); border-radius:18px; padding:28px 32px;
+  border:1px solid var(--border); border-radius:18px; padding:24px 28px;
 }
-.portrait{
-  width:220px; height:220px; border-radius:50%; object-fit:cover; border:4px solid #fff;
-  box-shadow:0 12px 28px rgba(0,0,0,.12);
-}
+.portrait{width:200px; height:200px; border-radius:50%; object-fit:cover; border:4px solid #fff; box-shadow:0 12px 28px rgba(0,0,0,.12)}
 .text h1{margin:0 0 6px; font-size:2.4rem}
 .subtitle{margin:0 0 10px; color:var(--muted); font-weight:600}
-.desc{margin:0 0 18px; color:#2b2f37; max-width:560px; line-height:1.6}
-.btn{
-  display:inline-block; background:linear-gradient(90deg,var(--brand),var(--brand2)); color:#fff;
-  padding:.9rem 1.2rem; border-radius:12px; font-weight:700; text-decoration:none;
-  box-shadow:0 10px 24px rgba(13,116,255,.24); transition:transform .15s ease, box-shadow .15s ease;
-}
+.desc{margin:0 0 18px; color:#2b2f37; max-width:620px; line-height:1.6}
+.btn{display:inline-block; background:linear-gradient(90deg,var(--brand),var(--brand2)); color:#fff; padding:.9rem 1.2rem; border-radius:12px; font-weight:700; text-decoration:none; box-shadow:0 10px 24px rgba(13,116,255,.24); transition:transform .15s ease, box-shadow .15s ease}
 .btn:hover{transform:translateY(-2px); box-shadow:0 14px 28px rgba(13,116,255,.32)}
+
+/* Buborékok */
+.bubbles{list-style:none; padding:0; margin:18px 0 0; display:grid; gap:10px; max-width:680px}
+.bubble{
+  background:var(--bubble); border:1px solid var(--border); border-radius:14px; padding:12px 14px;
+  color:#2c3340; box-shadow:0 8px 20px rgba(0,0,0,.06);
+  opacity:0; transform:translateY(8px); transition:.55s ease;
+}
+.bubble.show{opacity:1; transform:none}
+.bubble:nth-child(1){transition-delay:.06s}
+.bubble:nth-child(2){transition-delay:.14s}
+.bubble:nth-child(3){transition-delay:.22s}
+.bubble:nth-child(4){transition-delay:.30s}
 
 /* Reszponzív */
 @media (max-width: 960px){
-  .hero-content{flex-direction:column; text-align:center; gap:22px}
-  .portrait{width:160px; height:160px}
+  .hero{padding:0 4%}
+  .hero-content.left{flex-direction:column; text-align:left}
+  .portrait{width:150px; height:150px}
   .sidebar{right:8px; width:54px}
 }
