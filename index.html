@@ -8,39 +8,132 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Üvegszerű, lebegő „3D-hatású” háttér-buborékok CANVAS-szal (mindenhol megy) -->
+  <!-- Háttér (canvas, 3D-hatás) -->
   <canvas id="bg" aria-hidden="true"></canvas>
 
-  <!-- Nyelvváltó (HU alap) -->
-  <div class="flags" role="group" aria-label="Nyelvválasztó">
-    <button class="flag active" title="Magyar">🇭🇺</button>
-    <button class="flag" title="English">🇬🇧</button>
+  <!-- Jobb oldali menüsáv -->
+  <aside class="sidebar" aria-label="Oldalsó menü">
+    <button class="hamburger" id="openDrawer" aria-label="Menü">
+      <span></span><span></span><span></span>
+    </button>
+    <nav class="side-icons" aria-label="Közösségi linkek">
+      <a href="#" class="ico" aria-label="Facebook" title="Facebook">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.77-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.78l-.44 2.89h-2.34v6.99A10 10 0 0 0 22 12z"/></svg>
+      </a>
+      <a href="#" class="ico" aria-label="LinkedIn" title="LinkedIn">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M6.94 8.5H3.75V20h3.19V8.5zM5.34 7.08a1.85 1.85 0 1 0 0-3.7 1.85 1.85 0 0 0 0 3.7zM20.25 20h-3.18v-5.92c0-1.41-.03-3.22-1.96-3.22-1.96 0-2.26 1.53-2.26 3.12V20h-3.18V8.5h3.05v1.57h.04c.42-.79 1.45-1.62 2.99-1.62 3.2 0 3.79 2.11 3.79 4.85V20z"/></svg>
+      </a>
+      <a href="mailto:htamas495@gmail.com" class="ico" aria-label="E-mail" title="E-mail">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2zm0 4-8 5L4 8V6l8 5 8-5v2z"/></svg>
+      </a>
+    </nav>
+    <div class="langs" role="group" aria-label="Nyelvváltó">
+      <button class="flag active" title="Magyar">🇭🇺</button>
+      <button class="flag" title="English">🇬🇧</button>
+    </div>
+  </aside>
+
+  <!-- Kihúzható menü -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <button class="drawer-close" id="closeDrawer" aria-label="Bezárás">×</button>
+    <nav class="drawer-nav">
+      <a href="#about">Rólam</a>
+      <a href="#services">Szolgáltatások</a>
+      <a href="#refs">Referenciák</a>
+      <a href="#contact">Kapcsolat</a>
+    </nav>
   </div>
 
-  <!-- Hero: balra a portré + leírás -->
-  <header class="hero">
+  <!-- Chat panel (UI csak) -->
+  <section class="chat" aria-label="Chat (előnézet)">
+    <header class="chat-header">
+      <div class="dot online"></div>
+      <strong>Chat • kérdezz bátran</strong>
+    </header>
+    <div class="chat-body">
+      <div class="msg bot">Szia! Miben segíthetek? 👋</div>
+      <div class="msg you">Webshop + AI chat integráció érdekel.</div>
+      <div class="msg bot">Szuper! Röviden leírom a lehetőségeket.</div>
+    </div>
+    <footer class="chat-input">
+      <input disabled placeholder="Írj üzenetet… (hamarosan)" />
+      <button disabled>➤</button>
+    </footer>
+  </section>
+
+  <!-- HERO (balra), buborékok a jobb oldalon -->
+  <header class="hero" id="about">
     <div class="hero-inner">
       <img src="tamas.png" alt="Horváth Tamás" class="portrait" />
       <div class="intro">
         <h1>Horváth Tamás</h1>
         <p class="subtitle">Applikáció • Weboldal • Webshop • Játékfejlesztés</p>
-        <p class="lead">
-          Modern, gyors és letisztult megoldásokat készítek — legyen szó webes integrációról,
-          mobilalkalmazásról vagy játékról.
-        </p>
+        <p class="lead">Modern, gyors és letisztult megoldásokat készítek — web, mobil és játék.</p>
         <a href="#contact" class="btn">Lépj kapcsolatba</a>
       </div>
 
-      <!-- JOBB OLDALI BUBORÉK-MEZŐ (élethű, lassú, felpukkan) -->
-      <aside class="bubble-field" aria-label="Szolgáltatás buborékok">
-        <div class="chip pop" style="--delay:80ms;">Applikációk</div>
-        <div class="chip pop" style="--delay:240ms;">Villámgyors weboldal</div>
-        <div class="chip pop" style="--delay:400ms;">Webshop (Woo/Shopify/Magento)</div>
-        <div class="chip pop" style="--delay:560ms;">Unity / Unreal</div>
-        <div class="chip pop" style="--delay:720ms;">AI integráció & chat</div>
+      <aside class="bubble-field" aria-label="Szolgáltatás címkék">
+        <div class="chip pop" style="--delay:120ms;">Applikációk</div>
+        <div class="chip pop" style="--delay:280ms;">Villámgyors weboldal</div>
+        <div class="chip pop" style="--delay:440ms;">Webshop (Woo/Shopify/Magento)</div>
+        <div class="chip pop" style="--delay:600ms;">Unity / Unreal</div>
+        <div class="chip pop" style="--delay:760ms;">AI integráció & chat</div>
       </aside>
     </div>
   </header>
+
+  <!-- Szolgáltatások -->
+  <main id="services" class="section">
+    <h2>Szolgáltatások</h2>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M3 5h18v14H3zM5 7v10h14V7z"/></svg>
+        </div>
+        <h3>Weboldal</h3>
+        <p>Letisztult UI, gyors betöltés, SEO, analitika, Netlify/Vercel.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M7 4H5l-1 2v2h2l2.6 7.6c.2.5.6.8 1.1.8H21v-2H9.4l-.3-.8L20 11l1-5H6.2L5.3 4H7z"/></svg>
+        </div>
+        <h3>Webshop</h3>
+        <p>Woo/Shopify/Magento, fizetés, készlet, konverziómérés.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2a5 5 0 0 0-5 5H5a3 3 0 0 0 0 6h2v2H6a3 3 0 0 0 0 6h3v-3h6v3h3a3 3 0 0 0 0-6h-1v-2h2a3 3 0 0 0 0-6h-2a5 5 0 0 0-5-5z"/></svg>
+        </div>
+        <h3>AI & Chat</h3>
+        <p>Ügyfélszolgálati bot, RAG kereső, dokumentumválaszoló.</p>
+      </article>
+      <article class="card reveal">
+        <div class="icon">
+          <svg viewBox="0 0 24 24"><path d="M7 9h10l2 3-2 3H7l-2-3 2-3zm2 7h6v2H9z"/></svg>
+        </div>
+        <h3>Játék</h3>
+        <p>Unity/Unreal prototípus, Android/PC build, monetizáció.</p>
+      </article>
+    </div>
+  </main>
+
+  <!-- Referenciák (helyőrző) -->
+  <section id="refs" class="section alt">
+    <h2>Referenciák</h2>
+    <p class="muted">Hamarosan képek és esettanulmányok. (Kérj privát demót!)</p>
+  </section>
+
+  <!-- Kapcsolat -->
+  <section id="contact" class="section">
+    <h2>Kapcsolat</h2>
+    <ul class="contact">
+      <li>📞 <a href="tel:+36206240970">+36 20 624 0970</a></li>
+      <li>💬 <a href="https://wa.me/36206240970" target="_blank" rel="noopener">WhatsApp</a></li>
+      <li>✉️ <a href="mailto:htamas495@gmail.com">htamas495@gmail.com</a></li>
+    </ul>
+  </section>
+
+  <footer class="foot">© <span id="year"></span> Horváth Tamás</footer>
 
   <script src="app.js" defer></script>
 </body>
