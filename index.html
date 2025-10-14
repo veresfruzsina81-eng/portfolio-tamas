@@ -3,82 +3,152 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Horváth Tamás – Webfejlesztő</title>
-  <meta name="description" content="Profi webfejlesztés: portfólió, webshop, AI, Laravel. Gyors, biztonságos, üzletre szabott.">
-  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/styles.css">
+  <title>Horváth Tamás – Webfejlesztő | Bemutatkozó</title>
+  <meta name="description" content="Profi, gyors és letisztult weboldalak – GitHub + Netlify deploy, SEO, reszponzív dizájn. Nézd meg a munkáimat és kérj ajánlatot!" />
+
+  <!-- Open Graph / Social -->
+  <meta property="og:title" content="Horváth Tamás – Webfejlesztő" />
+  <meta property="og:description" content="Profi, gyors és letisztult weboldalak – GitHub + Netlify deploy." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="tamas.png" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+
+  <!-- Fejléc -->
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#top">HT<span>.</span></a>
-      <nav>
+      <a href="#" class="logo">HT<span>.</span></a>
+
+      <button class="nav-toggle" aria-label="Menü" aria-expanded="false">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav class="nav-links" aria-label="Fő navigáció">
         <a href="#rolam">Rólam</a>
         <a href="#szolgaltatasok">Szolgáltatások</a>
-        <a href="#kapcsolat">Kapcsolat</a>
+        <a href="#munkak">Munkáim</a>
+        <a href="#velemenyek">Vélemények</a>
+        <a href="#kapcsolat" class="btn btn-sm">Kapcsolat</a>
       </nav>
     </div>
   </header>
 
-  <main id="top">
-    <section class="hero container">
-      <div class="hero-text">
-        <h1>Horváth <span>Tamás</span></h1>
-        <p class="lead">Webfejlesztő. Letisztult design, gyors felület, üzletre szabott megoldások.</p>
-        <div class="hero-actions">
-          <a href="#kapcsolat" class="btn">Kapcsolatfelvétel</a>
-          <a href="#szolgaltatasok" class="btn ghost">Szolgáltatások</a>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container hero-grid">
+      <div class="hero-text reveal">
+        <h1>Profi, gyors, <span class="shimmer">letisztult</span> weboldalak</h1>
+        <p>GitHub + Netlify alapokon, SEO-val, modern UI/UX-szel. Segítek, hogy a márkád online is erős legyen.</p>
+        <div class="hero-cta">
+          <a href="#kapcsolat" class="btn">Kérj ajánlatot</a>
+          <a href="#munkak" class="btn btn-ghost">Munkáim</a>
         </div>
-        <div id="greeting" class="greeting"></div>
+        <ul class="hero-badges" role="list">
+          <li>⚡ Gyors betöltés</li>
+          <li>📱 Teljesen reszponzív</li>
+          <li>🔍 SEO alapok</li>
+        </ul>
       </div>
-      <div class="hero-image-wrap">
-        <!-- A portréd neve: assets/img/tamas.png -->
-        <img src="assets/img/tamas.png" alt="Horváth Tamás portré" class="hero-image">
+      <div class="hero-media reveal reveal-delay-1">
+        <img src="tamas.png" alt="Horváth Tamás portré" loading="eager">
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section id="rolam" class="container section">
-      <h2>Rólam</h2>
-      <p class="muted">Rövid bemutatkozó szöveg helye. Ezt később kitöltjük és finomítjuk.</p>
-    </section>
-
-    <section id="szolgaltatasok" class="container section">
-      <h2>Szolgáltatások</h2>
-      <div class="grid cards">
-        <article class="card"><h3>Portfólió oldal</h3><p>Gyors, mobilbarát, SEO-barát.</p></article>
-        <article class="card"><h3>Webshop</h3><p>Egyszerű rendelési folyamat, fizetés integráció.</p></article>
-        <article class="card"><h3>AI chat</h3><p>24/7 válasz, konverzió növelés.</p></article>
+  <!-- Rólam -->
+  <section id="rolam" class="section">
+    <div class="container grid-2">
+      <div class="reveal">
+        <h2>Rólam</h2>
+        <p>Horváth Tamás vagyok, webfejlesztő. Letisztult, gyors és jól konvertáló oldalakat készítek – egyéni vállalkozóknak és cégeknek. A célom, hogy a honlapod modern, bizalomépítő és keresőbarát legyen.</p>
+        <p><strong>Elérhetőség:</strong><br>
+        📞 <a href="tel:+36206240970">+36 20 624 0970</a><br>
+        💬 <a href="https://wa.me/36206240970" target="_blank" rel="noopener">WhatsApp üzenet</a><br>
+        ✉️ <a href="mailto:htamas495@gmail.com">htamas495@gmail.com</a></p>
       </div>
-    </section>
+      <ul class="cards" role="list">
+        <li class="card reveal reveal-delay-1"><h3>Gyors indulás</h3><p>1–3 oldalból álló bemutatkozó site, rövid határidővel.</p></li>
+        <li class="card reveal reveal-delay-2"><h3>Skálázható</h3><p>Később bővíthető bloggal, portfólióval, webshoppal.</p></li>
+        <li class="card reveal reveal-delay-3"><h3>Egyszerű üzemeltetés</h3><p>GitHub → Netlify automata deploy, domain bekötés.</p></li>
+      </ul>
+    </div>
+  </section>
 
-    <section id="kapcsolat" class="container section">
-      <h2>Kapcsolat</h2>
-      <form name="kapcsolat" method="POST" data-netlify="true" class="contact-form">
-        <input type="hidden" name="form-name" value="kapcsolat">
-        <div class="grid two">
-          <div>
-            <label>Név</label>
-            <input type="text" name="name" required placeholder="Teljes név">
-          </div>
-          <div>
-            <label>E-mail</label>
-            <input type="email" name="email" required placeholder="email@cim.hu">
-          </div>
-        </div>
-        <label>Üzenet</label>
-        <textarea name="message" rows="5" required placeholder="Írd le röviden, miben segíthetek"></textarea>
-        <button class="btn" type="submit">Küldés</button>
+  <!-- Szolgáltatások -->
+  <section id="szolgaltatasok" class="section alt">
+    <div class="container">
+      <h2 class="reveal">Szolgáltatások</h2>
+      <div class="features">
+        <div class="feature reveal reveal-delay-1"><h3>Bemutatkozó oldal</h3><p>1–5 oldal, egyedi dizájn, mobilbarát kialakítás.</p></div>
+        <div class="feature reveal reveal-delay-2"><h3>Landing page</h3><p>Kampányokhoz optimalizált oldal, gyors A/B teszttel.</p></div>
+        <div class="feature reveal reveal-delay-3"><h3>SEO & Teljesítmény</h3><p>Alap SEO beállítások és gyors betöltés (Core Web Vitals).</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Munkák -->
+  <section id="munkak" class="section">
+    <div class="container">
+      <h2 class="reveal">Munkáim</h2>
+      <div class="work-grid">
+        <article class="work-item reveal"><div class="work-thumb" aria-hidden="true"></div><h3>Projekt #1</h3><p>Letisztult landing page konverziófókusszal.</p></article>
+        <article class="work-item reveal reveal-delay-1"><div class="work-thumb" aria-hidden="true"></div><h3>Projekt #2</h3><p>Vállalkozói bemutatkozó oldal, Netlify űrlappal.</p></article>
+        <article class="work-item reveal reveal-delay-2"><div class="work-thumb" aria-hidden="true"></div><h3>Projekt #3</h3><p>Gyors és keresőbarát struktúra.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Vélemények (slider) -->
+  <section id="velemenyek" class="section alt">
+    <div class="container">
+      <h2 class="reveal">Ügyfélvélemények</h2>
+      <div class="t-slider" id="tSlider" aria-roledescription="carousel">
+        <blockquote class="t-card"><p>„Gyors, pontos, szép munka. A site első héten hozott 3 új megkeresést.”</p><footer>— Kovács Anna, vállalkozó</footer></blockquote>
+        <blockquote class="t-card"><p>„Átlátható folyamat és profi kommunikáció. Ajánlom!”</p><footer>— Szabó Péter, cégvezető</footer></blockquote>
+        <blockquote class="t-card"><p>„Reszponzív, gyors, SEO-barát – pont amire szükségünk volt.”</p><footer>— Nagy Márk, marketingvezető</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kapcsolat -->
+  <section id="kapcsolat" class="section">
+    <div class="container grid-2">
+      <div class="reveal">
+        <h2>Vedd fel velem a kapcsolatot</h2>
+        <p>Írj bátran WhatsAppon, e-mailben vagy hívj fel. Szívesen segítek, ha új weboldalt szeretnél!</p>
+        <ul class="contact-points" role="list">
+          <li>📞 Telefon: <a href="tel:+36206240970">+36 20 624 0970</a></li>
+          <li>💬 WhatsApp: <a href="https://wa.me/36206240970" target="_blank" rel="noopener">Chat indítása</a></li>
+          <li>✉️ E-mail: <a href="mailto:htamas495@gmail.com">htamas495@gmail.com</a></li>
+        </ul>
+      </div>
+      <form name="kapcsolat" method="POST" data-netlify="true" class="form reveal" netlify>
+        <input type="hidden" name="form-name" value="kapcsolat" />
+        <label>Neved<input type="text" name="name" required></label>
+        <label>E-mail<input type="email" name="email" required></label>
+        <label>Üzenet<textarea name="message" rows="5" required></textarea></label>
+        <button type="submit" class="btn w-100">Üzenet küldése</button>
+        <p class="form-note" aria-live="polite" id="form-note"></p>
       </form>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <!-- Lebegő CTA -->
+  <a href="#kapcsolat" class="float-cta" aria-label="Vedd fel velem a kapcsolatot">Írj nekem</a>
 
   <footer class="site-footer">
-    <div class="container footer">
+    <div class="container footer-grid">
       <p>© <span id="year"></span> Horváth Tamás. Minden jog fenntartva.</p>
     </div>
   </footer>
 
-  <script src="assets/js/app.js"></script>
+  <script src="app.js" defer></script>
 </body>
 </html>
