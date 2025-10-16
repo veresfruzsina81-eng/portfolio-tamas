@@ -1,19 +1,19 @@
-<html lang="hu" class="h-full scroll-smooth">
+html lang="hu" class="h-full scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serlegkirály - Főoldal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <script src=""></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://serlegkiraly.hu/assets/js/app.js"></script>
+    <script src="/assets/js/app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.14.8/dist/cdn.min.js"></script>
-    <link rel="shortcut icon" href="https://serlegkiraly.hu/assets/images/favicon.webp" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/images/favicon.webp" type="image/x-icon">
     <meta property="og:description" content="Minden nálunk vásárolt serleg, érem, figura feliratozása ingyenes!">
     <meta property="og:title" content="Serlegkirály - Koronázzuk meg a győzteseket">
-    <meta property="og:image" content="https://serlegkiraly.hu/assets/images/ogimg.jpg" />
+    <meta property="og:image" content="/images/ogimg.jpg" />
 
 
     <script>
@@ -3102,23 +3102,4 @@
             }
         }
     });
-</script>
-<script>
-// DEMÓ mód – átirányítások tiltása
-document.addEventListener('DOMContentLoaded', () => {
-
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', e => {
-      e.preventDefault();
-    });
-    link.setAttribute('href', '#');
-    link.removeAttribute('target');
-  });
-
-  document.querySelectorAll('form').forEach(form => {
-    form.addEventListener('submit', e => e.preventDefault());
-  });
-
-  console.log('🔒 DEMÓ mód aktív – az átirányítások letiltva');
-});
 </script>
