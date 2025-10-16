@@ -3103,3 +3103,22 @@
         }
     });
 </script>
+<script>
+// DEMÓ mód – átirányítások tiltása
+document.addEventListener('DOMContentLoaded', () => {
+
+  document.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', e => {
+      e.preventDefault();
+    });
+    link.setAttribute('href', '#');
+    link.removeAttribute('target');
+  });
+
+  document.querySelectorAll('form').forEach(form => {
+    form.addEventListener('submit', e => e.preventDefault());
+  });
+
+  console.log('🔒 DEMÓ mód aktív – az átirányítások letiltva');
+});
+</script>
