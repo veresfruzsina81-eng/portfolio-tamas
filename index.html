@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aurora Photography Studio — Családi fotózás</title>
+  <meta name="description" content="Családi, baba-mama, újszülött és páros fotózás prémium stílusban.">
+  <link rel="icon" href="https://fav.farm/📷">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <!-- Preloader -->
+  <div id="preloader">
+    <div class="spinner"></div>
+    <span>AuroraPhoto</span>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-row">
+      <div class="logo">Aurora<span>Photo</span></div>
+      <nav class="nav" aria-label="Fő navigáció">
+        <a href="#home" data-key="menu-home">Főoldal</a>
+        <a href="#categories" data-key="menu-categories">Kategóriák</a>
+        <a href="#portfolio" data-key="menu-portfolio">Portfólió</a>
+        <a href="#services" data-key="menu-services">Szolgáltatások</a>
+        <a href="#about" data-key="menu-about">Rólam</a>
+        <a href="#reviews" data-key="menu-reviews">Vélemények</a>
+        <a href="#faq" data-key="menu-faq">GYIK</a>
+        <a href="#contact" class="cta" data-key="menu-contact">Kapcsolat</a>
+      </nav>
+      <div class="right">
+        <div class="lang">
+          <img src="https://flagcdn.com/w20/hu.png" id="lang-hu" class="flag active" alt="HU">
+          <img src="https://flagcdn.com/w20/gb.png" id="lang-en" class="flag" alt="EN">
+        </div>
+        <button class="hamburger" aria-label="Menü"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-drawer" id="drawer">
+      <a href="#home" data-key="menu-home">Főoldal</a>
+      <a href="#categories" data-key="menu-categories">Kategóriák</a>
+      <a href="#portfolio" data-key="menu-portfolio">Portfólió</a>
+      <a href="#services" data-key="menu-services">Szolgáltatások</a>
+      <a href="#about" data-key="menu-about">Rólam</a>
+      <a href="#reviews" data-key="menu-reviews">Vélemények</a>
+      <a href="#faq" data-key="menu-faq">GYIK</a>
+      <a href="#contact" class="cta" data-key="menu-contact">Kapcsolat</a>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="home" class="hero">
+    <div class="hero-media" data-parallax>
+      <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=2000&q=80" alt="family hero" />
+      <div class="overlay"></div>
+      <div class="hud">
+        <div class="rec"><span class="dot"></span><span data-key="rec">REC</span></div>
+        <div class="frame"></div>
+        <div class="iso">ISO 200 • F1.8 • 1/125</div>
+      </div>
+    </div>
+    <div class="container hero-content">
+      <h1 class="display" data-key="hero-title">Családi „hűha” pillanatok – örökre</h1>
+      <p class="lead" data-key="hero-text">Meleg hangulat, türelem, valódi mosolyok. Varázsoljuk emlékké a hétköznapit.</p>
+      <div class="cta-row">
+        <a href="#categories" class="btn primary" data-key="hero-btn-1">Felfedezem</a>
+        <a href="#portfolio" class="btn ghost" data-key="hero-btn-2">Portfólió</a>
+        <button id="openCamera" class="btn subtle" data-key="hero-btn-3">Kamera mód</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- CATEGORIES (animated cards) -->
+  <section id="categories" class="section">
+    <div class="container">
+      <h2 data-key="cats-title">Kategóriák</h2>
+      <p class="muted center" data-key="cats-sub">Válassz témát — a portfólió lent automatikusan szűrődik.</p>
+      <div class="cat-grid">
+        <article class="cat reveal" data-filter="family">
+          <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=1200&q=80" alt="family"/>
+          <div class="shade"></div><h3 data-key="cat-family">Család</h3>
+        </article>
+        <article class="cat reveal" data-filter="newborn">
+          <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=1200&q=80" alt="newborn"/>
+          <div class="shade"></div><h3 data-key="cat-newborn">Újszülött</h3>
+        </article>
+        <article class="cat reveal" data-filter="couple">
+          <img src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?auto=format&fit=crop&w=1200&q=80" alt="couple"/>
+          <div class="shade"></div><h3 data-key="cat-couple">Páros</h3>
+        </article>
+        <article class="cat reveal" data-filter="wedding">
+          <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=1200&q=80" alt="wedding"/>
+          <div class="shade"></div><h3 data-key="cat-wedding">Esküvő</h3>
+        </article>
+        <article class="cat reveal" data-filter="studio">
+          <img src="https://images.unsplash.com/photo-1512777576244-b846ac3d816f?auto=format&fit=crop&w=1200&q=80" alt="studio"/>
+          <div class="shade"></div><h3 data-key="cat-studio">Stúdió</h3>
+        </article>
+        <article class="cat reveal" data-filter="product">
+          <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=1200&q=80" alt="product"/>
+          <div class="shade"></div><h3 data-key="cat-product">Termék</h3>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PORTFOLIO (masonry-like grid) -->
+  <section id="portfolio" class="section alt">
+    <div class="container">
+      <div class="toolbar">
+        <h2 data-key="portfolio-title">Portfólió</h2>
+        <div class="filters">
+          <button class="chip active" data-filter="all" data-key="filter-all">Összes</button>
+          <button class="chip" data-filter="family" data-key="filter-family">Család</button>
+          <button class="chip" data-filter="newborn" data-key="filter-newborn">Újszülött</button>
+          <button class="chip" data-filter="couple" data-key="filter-couple">Páros</button>
+          <button class="chip" data-filter="wedding" data-key="filter-wedding">Esküvő</button>
+          <button class="chip" data-filter="studio" data-key="filter-studio">Stúdió</button>
+          <button class="chip" data-filter="product" data-key="filter-product">Termék</button>
+        </div>
+      </div>
+      <div class="masonry reveal">
+        <!-- 12 items, mixed categories -->
+        <img data-cat="family" src="https://images.unsplash.com/photo-1519681393784-d120267933ba?auto=format&fit=crop&w=900&q=80" alt="1"/>
+        <img data-cat="newborn" src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="2"/>
+        <img data-cat="wedding" src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?auto=format&fit=crop&w=900&q=80" alt="3"/>
+        <img data-cat="studio" src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?auto=format&fit=crop&w=900&q=80" alt="4"/>
+        <img data-cat="couple" src="https://images.unsplash.com/photo-1521335629791-ce4aec67dd53?auto=format&fit=crop&w=900&q=80" alt="5"/>
+        <img data-cat="product" src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?auto=format&fit=crop&w=900&q=80" alt="6"/>
+        <img data-cat="family" src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=900&q=80" alt="7"/>
+        <img data-cat="studio" src="https://images.unsplash.com/photo-1512777576244-b846ac3d816f?auto=format&fit=crop&w=900&q=80" alt="8"/>
+        <img data-cat="wedding" src="https://images.unsplash.com/photo-1529634806980-b1d0ae31e9d1?auto=format&fit=crop&w=900&q=80" alt="9"/>
+        <img data-cat="newborn" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=900&q=80" alt="10"/>
+        <img data-cat="couple" src="https://images.unsplash.com/photo-1517260739337-6799d5370b3f?auto=format&fit=crop&w=900&q=80" alt="11"/>
+        <img data-cat="product" src="https://images.unsplash.com/photo-1511920170033-f8396924c348?auto=format&fit=crop&w=900&q=80" alt="12"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2 data-key="services-title">Szolgáltatások és árak</h2>
+      <p class="muted center" data-key="services-sub">Áraink tartalmazzák a válogatást és az alapretust. Smink és frizura kérhető.</p>
+      <div class="cards">
+        <div class="card">
+          <h3 data-key="svc-family-title">Családi csomag</h3>
+          <ul>
+            <li data-key="svc-family-1">90 perc (stúdió / kültér)</li>
+            <li data-key="svc-family-2">25 retusált fotó</li>
+            <li data-key="svc-family-3">Online galéria + letöltés</li>
+          </ul>
+          <div class="price">59 900 Ft</div>
+          <a href="#contact" class="btn small" data-key="btn-book">Foglalok</a>
+        </div>
+        <div class="card highlight">
+          <div class="tag" data-key="popular">Népszerű</div>
+          <h3 data-key="svc-newborn-title">Újszülött csomag</h3>
+          <ul>
+            <li data-key="svc-newborn-1">2–3 óra, biztonságos pózok</li>
+            <li data-key="svc-newborn-2">15 retusált fotó + kellékek</li>
+            <li data-key="svc-newborn-3">Családi képek az árban</li>
+          </ul>
+          <div class="price">89 900 Ft</div>
+          <a href="#contact" class="btn small" data-key="btn-book">Foglalok</a>
+        </div>
+        <div class="card">
+          <h3 data-key="svc-couple-title">Páros csomag</h3>
+          <ul>
+            <li data-key="svc-couple-1">60 perc kreatív fotózás</li>
+            <li data-key="svc-couple-2">20 retusált fotó</li>
+            <li data-key="svc-couple-3">Választható helyszín</li>
+          </ul>
+          <div class="price">49 900 Ft</div>
+          <a href="#contact" class="btn small" data-key="btn-book">Foglalok</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section alt">
+    <div class="container about">
+      <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&w=1200&q=80" alt="photographer">
+      <div>
+        <h2 data-key="about-title">Rólam</h2>
+        <p class="lead" data-key="about-txt">8+ év tapasztalat, családbarát légkör, precíz utómunka. A cél: az a bizonyos „hűha”.</p>
+        <ul class="ticks">
+          <li data-key="about-b1">Full‑frame rendszerek, fényformálók</li>
+          <li data-key="about-b2">Színhelyes color grading</li>
+          <li data-key="about-b3">3–7 munkanapos átadás</li>
+        </ul>
+        <a href="#contact" class="btn" data-key="about-cta">Időpontot kérek</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- REVIEWS -->
+  <section id="reviews" class="section">
+    <div class="container">
+      <h2 data-key="reviews-title">Vélemények</h2>
+      <div class="carousel">
+        <div class="slide active">“<span data-key="rev1">Életünk legszebb családi képei! A gyerekek is imádták.</span>” — Anna</div>
+        <div class="slide">“<span data-key="rev2">Türelmes, kedves, profi — az újszülött fotózás varázslat volt.</span>” — Dóri</div>
+        <div class="slide">“<span data-key="rev3">Esküvőnkon észrevétlen volt, mégis minden pillanat megvan.</span>” — Balázs</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="section alt">
+    <div class="container faq">
+      <h2 data-key="faq-title">Gyakori kérdések</h2>
+      <details class="reveal"><summary data-key="q1">Mikor kapom meg a képeket?</summary><p data-key="a1">Válogatót 48 órán belül, végleges képeket 3–7 munkanapon belül küldünk.</p></details>
+      <details class="reveal"><summary data-key="q2">Hány képet kapok?</summary><p data-key="a2">Csomagtól függően 15–80 retusált fotó, teljes válogatás webgalérián.</p></details>
+      <details class="reveal"><summary data-key="q3">Utaztok helyszínre?</summary><p data-key="a3">Igen, Budapest területén díjmentes, azon kívül km alapú díjjal.</p></details>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <h2 data-key="contact-title">Kapcsolat</h2>
+      <p class="muted center" data-key="contact-sub">Írd meg röviden az elképzelésed, 24 órán belül válaszolok.</p>
+      <form class="contact-form" onsubmit="event.preventDefault(); alert(successMsg);">
+        <div class="grid2">
+          <input type="text" placeholder="Név" data-key="ph-name" required>
+          <input type="email" placeholder="E-mail" data-key="ph-email" required>
+        </div>
+        <input type="text" placeholder="Tárgy" data-key="ph-subject">
+        <textarea rows="6" placeholder="Üzenet" data-key="ph-message"></textarea>
+        <button class="btn primary" type="submit" data-key="send">Küldés</button>
+      </form>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Aurora Photography Studio • <a href="#home">Top ↑</a></p>
+    </div>
+  </footer>
+
+  <!-- Utilities -->
+  <a class="fab phone" href="tel:+36300000000" aria-label="Telefon">📞</a>
+  <a class="fab wa" href="https://wa.me/36300000000" target="_blank" aria-label="WhatsApp">💬</a>
+  <button id="toTop" class="toTop" aria-label="Vissza az elejére">↑</button>
+
+  <!-- CAMERA MODAL -->
+  <div class="modal" id="cameraModal" aria-hidden="true">
+    <div class="modal-inner">
+      <button class="close" id="closeCamera" aria-label="Bezárás">✕</button>
+      <div class="live-camera">
+        <div class="scanline"></div>
+        <div class="focus-rect"></div>
+        <div class="rec rec-modal"><span class="dot"></span><span data-key="rec">REC</span></div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
