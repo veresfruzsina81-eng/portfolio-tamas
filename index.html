@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="hu">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Aurora Photography Studio</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="logo">Aurora<span>Photo</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home" data-key="menu-home">Főoldal</a></li>
+        <li><a href="#portfolio" data-key="menu-portfolio">Portfólió</a></li>
+        <li><a href="#services" data-key="menu-services">Szolgáltatások</a></li>
+        <li><a href="#about" data-key="menu-about">Rólam</a></li>
+        <li><a href="#contact" data-key="menu-contact">Kapcsolat</a></li>
+      </ul>
+    </nav>
+    <div class="lang">
+      <img src="https://flagcdn.com/w20/hu.png" id="hu" class="flag active" alt="Magyar zászló">
+      <img src="https://flagcdn.com/w20/gb.png" id="en" class="flag" alt="Angol zászló">
+    </div>
+  </header>
+
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1 data-key="hero-title">Fedezd fel a fény erejét</h1>
+      <p data-key="hero-text">Aurora Photography – ahol minden pillanat művészetté válik.</p>
+      <a href="#portfolio" class="btn" data-key="hero-btn">Tekintsd meg munkáimat</a>
+    </div>
+  </section>
+
+  <section id="portfolio" class="fade-section">
+    <h2 data-key="portfolio-title">Portfólió</h2>
+    <div class="gallery">
+      <!-- Képek külső forrásból származnak; szükség esetén cseréld saját fotóra -->
+      <img src="https://images.unsplash.com/photo-1504208434309-cb69f4fe52b0?auto=format&fit=crop&w=800&q=80" alt="Portré fotó">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80" alt="Esküvői fotó">
+      <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=800&q=80" alt="Stúdió fotó">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80" alt="Kültéri fotó">
+    </div>
+  </section>
+
+  <section id="services" class="fade-section">
+    <h2 data-key="services-title">Szolgáltatások</h2>
+    <div class="services">
+      <div class="card">
+        <h3 data-key="service1-title">Portré fotózás</h3>
+        <p data-key="service1-text">Professzionális portrék természetes és stúdiófényben.</p>
+      </div>
+      <div class="card">
+        <h3 data-key="service2-title">Esküvői fotózás</h3>
+        <p data-key="service2-text">A legszebb napod örökké megőrizve, művészi részletességgel.</p>
+      </div>
+      <div class="card">
+        <h3 data-key="service3-title">Termékfotózás</h3>
+        <p data-key="service3-text">Tökéletes világítás és kompozíció a márkádhoz.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="fade-section">
+    <h2 data-key="about-title">Rólam</h2>
+    <div class="about-content">
+      <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?auto=format&fit=crop&w=600&q=80" alt="Fotós portré">
+      <p data-key="about-text">
+        Szenvedélyem a fény, az emberi történetek és a pillanatok megörökítése.  
+        Az Aurora Studio célja, hogy minden kép önmagáért beszéljen.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="fade-section">
+    <h2 data-key="contact-title">Kapcsolat</h2>
+    <form>
+      <input type="text" placeholder="Név" data-key="form-name">
+      <input type="email" placeholder="E-mail" data-key="form-email">
+      <textarea placeholder="Üzenet" data-key="form-message"></textarea>
+      <button type="submit" class="btn" data-key="form-send">Küldés</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Aurora Photography Studio</p>
+  </footer>
+</body>
+</html>
